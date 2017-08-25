@@ -4,28 +4,26 @@ package com.slp;
  * Created by sangliping on 2017/8/23.
  */
 
-import com.slp.config.Neo4jConfig;
-import com.slp.entity.Actor;
+import com.google.gson.Gson;
 import com.slp.entity.Movie;
-import com.slp.entity.Role;
-import com.slp.repository.ActorRepository;
-import com.slp.repository.MovieRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.util.Assert;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.junit4.SpringRunner;
+import java.net.URL;
 
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Neo4jConfig.class})
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = SpringBootNeo4jApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class MovieTest {
     private static Logger logger = LoggerFactory.getLogger(MovieTest.class);
-
+/*
     @Autowired
     MovieRepository movieRepository;
     @Autowired
@@ -84,5 +82,43 @@ public class MovieTest {
         for (Role role : movie.getRoles()) {
             logger.info("====== actor:{}, role:{}", role.getActor().getName(), role.getRole());
         }
+    }*/
+
+
+   /* @LocalServerPort
+    private int port;*/
+
+    private URL base;
+
+    private Gson gson = new Gson();
+    /**
+     * TestRestTemplate is only auto-configured when @SpringBootTest has been configured with a webEnvironment that means it starts the web container and listens for HTTP requests
+     */
+    @Autowired
+    private TestRestTemplate restTemplate;
+
+    @Before
+    public void setUp() throws Exception {
+        this.base = new URL("http://localhost:" + "8080" + "/");
     }
+
+    @Test
+    public void findByTaskName() {
+        ResponseEntity<Movie> test = this.restTemplate.getForEntity(this.base.toString() + "/测试", Movie.class);
+        System.out.println(gson.toJson(test.getBody())+"输出数据");
+    }
+
+    @Test
+    public void saveTask() {
+        Movie movie = new Movie();
+        movie.setTitle("测试");
+        movie.setYear("2017");
+        movie.setId(1L);
+        ResponseEntity<Movie> test = this.restTemplate.
+                postForEntity(this.base.toString() + "/movie", movie,
+                        Movie.class);
+        System.out.println(gson.toJson(test.getBody())+"保存实体");
+    }
+
+
 }

@@ -1,0 +1,27 @@
+在HTML页面上使用Thymeleaf标签语言，用一个关键字th来标注，使用Thymeleaf标签的典型例子：
+<h3 th:text="${actor.name}"></h3>
+<img th:src="@{/images/logo.png}"/>
+其中th:text指定了再标签<h3>中显示的文本，他的值来自于关键字$所引用的内存变量，th:src设定了标签<img>的图片文件的链接地址，既可以是绝对路径，也可以是相对路径
+常用Thymeleaf的标签和函数：
+th:text 显示文本
+th:utext：和th:text的区别是针对unescaped text
+th:attr:设置标签属性
+th:if or th:unless :条件判断语句
+th:switch ,th:case :选择语句
+th:each :循环语句
+#dates:日期函数
+#calendars:日历函数
+#numbers:数字函数
+#strings:字符串函数
+#objects:对象函数
+#bools:逻辑函数
+#arrays:数组函数
+#lists:列表函数
+
+使用功能函数
+#格式化日期：
+th:value="${movie.createDate}?$${dates.format(movie.createDate,'yyyy-MM-dd HH:mm:ss')}":"'"
+#使用编程语句
+<option th:each="actor:${actors}" th:value="${actor.id}" th:text="${actor.name}"></option>
+#使用页面框架模板
+layout:fragment=""
