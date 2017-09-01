@@ -1,0 +1,16 @@
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\redis\RoleRedis.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\entity\Department.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\entity\User.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\repository\DepartmentRepository.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\repository\UserRepository.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\service\UserService.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\model\PageQo.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\service\DepartmentService.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\redis\UserRedis.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\model\UserQo.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\entity\Role.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\model\DepartmentQo.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\redis\DepartmentRedis.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\model\RoleQo.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\repository\RoleRepository.java
+D:\Spring Boot workspace\Spring-Boot\spring-boot-dbup\mysql\src\main\java\com\slp\service\RoleService.java
